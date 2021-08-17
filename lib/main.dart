@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:math';
+//import 'dart:math';
 
 void main() {
   runApp(
@@ -17,13 +17,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Color(0xFFFFFFFF),
       appBar: AppBar(
         centerTitle: true,
+        //elevation: 0,
         title: RichText(
           text: TextSpan(
             text: 'hazard',
             style: TextStyle(
+              //color: Colors.black,
+              color: Color(0xFF0D1D24),
               fontSize: 25,
             ),
             children: const <TextSpan>[
@@ -33,7 +36,8 @@ class MyApp extends StatelessWidget {
             ],
           ),
         ),
-        backgroundColor: Colors.blueGrey[900],
+        //backgroundColor: Color(0xFF0D1D24),
+        backgroundColor: Color(0xFFFFFFFF),
       ),
       body: hazardBody(),
     );
@@ -55,172 +59,241 @@ class _hazardBodyState extends State<hazardBody> {
     return Column(
       children: [
         Container(
+          //decoration:
           height: 130,
           width: double.infinity,
-          color: Colors.white70,
+          color: Color(0xFFFFFFFF),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(16.0),
-                child: Container(
-                  height: 110,
-                  width: 110,
-                  color: Colors.white,
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Color(0x22000000)),
+                  borderRadius: BorderRadius.circular(20.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0x40000000),
+                      blurRadius: 4,
+                      offset: Offset(4, 6),
+                    ),
+                  ],
                 ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20.0),
+                  child: Container(
+                    height: 120,
+                    width: 120,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 20,
               ),
               Container(
-                height: 110,
-                width: 50,
-                color: Colors.blue[100],
+                height: 120,
+                width: 80,
+                //color: Colors.blue[100],
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Container(
-                      height: 50,
-                      width: 50,
-                      color: Colors.blue[300],
-                    ),
-                    SizedBox(
-                      height: 10,
+                    Icon(
+                      Icons.add_circle_outline,
+                      color: Color(0x830D1D24),
+                      size: 30.0,
+                      //semanticLabel: 'Text to announce in accessibility modes',
                     ),
                     Container(
-                      height: 30,
-                      width: 30,
-                      color: Colors.white,
-                    ),
+                      height: 45,
+                      width: 80,
+                      color: Colors.yellow,
+                    )
                   ],
                 ),
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(16.0),
-                child: Container(
-                  height: 110,
-                  width: 110,
-                  color: Colors.white,
-                ),
+              SizedBox(
+                width: 20,
               ),
-            ],
-          ),
-        ),
-        Container(
-          height: 130,
-          width: double.infinity,
-          color: Colors.white70,
-          child: Column(
-            children: [
-              Card(
-                margin: EdgeInsets.symmetric(vertical: 2, horizontal: 50),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.filter_1,
-                    size: 20,
-                    color: Colors.teal,
-                  ),
-                  title: Text(
-                    "chemical hazard 01",
-                    style: TextStyle(
-                      //   //  fontFamily: 'Source Sans Pro',
-                      color: Colors.teal[900],
-                      fontSize: 20,
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Color(0x22000000)),
+                  borderRadius: BorderRadius.circular(20.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0x40000000),
+                      blurRadius: 4,
+                      offset: Offset(4, 6),
                     ),
-                  ),
+                  ],
                 ),
-              ),
-              Card(
-                margin: EdgeInsets.symmetric(vertical: 7, horizontal: 50),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.filter_2,
-                    size: 20,
-                    color: Colors.teal,
-                  ),
-                  title: Text(
-                    "chemical hazard 02",
-                    style: TextStyle(
-                      //  fontFamily: 'Source Sans Pro',
-                      color: Colors.teal[900],
-                      fontSize: 20,
-                    ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20.0),
+                  child: Container(
+                    height: 120,
+                    width: 120,
+                    color: Colors.white,
                   ),
                 ),
               ),
             ],
           ),
         ),
-        Container(
-          height: 400,
-          width: double.infinity,
-          color: Colors.white70,
+        Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20.0),
+            child: Container(
+              height: 130,
+              width: double.infinity,
+              //color: Color(0x63DCE7EC),
+              child: Column(
+                children: [
+                  Card(
+                    elevation: 4,
+                    shadowColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      //side: BorderSide(color: Colors.white70, width: 5),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    color: Colors.white,
+                    //margin: EdgeInsets.symmetric(vertical: 2, horizontal: 50),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.filter_1,
+                        size: 20,
+                        color: Colors.blueGrey[900],
+                      ),
+                      title: Text(
+                        "Select Chemical Hazard 01",
+                        style: TextStyle(
+                          //   //  fontFamily: 'Source Sans Pro',
+                          color: Colors.blueGrey[900],
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    elevation: 4,
+                    shadowColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      //side: BorderSide(color: Colors.white70, width: 5),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    color: Colors.white,
+                    //margin: EdgeInsets.symmetric(vertical: 7, horizontal: 50),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.filter_2,
+                        size: 20,
+                        color: Colors.blueGrey[900],
+                      ),
+                      title: Text(
+                        "Select Chemical Hazard 02",
+                        style: TextStyle(
+                          //  fontFamily: 'Source Sans Pro',
+                          color: Colors.blueGrey[900],
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(20.0),
           child: Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    TextButton(
-                      onPressed: () {
-                        print("v");
-                      },
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(6.0),
+            height: 400,
+            width: double.infinity,
+            color: Color(0xFFF2F6F9),
+            child: Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          print("v");
+                        },
                         child: Container(
-                          padding: EdgeInsets.all(2),
-                          height: ch_hi_li,
-                          width: ch_wi_li,
-                          color: Colors.white,
-                          child: Image.asset('images/fg_r.png'),
+                          decoration: BoxDecoration(
+                            //border: Border.all(color: Color(0xA1C1C1C)),
+                            borderRadius: BorderRadius.circular(12.0),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color(0x22000000),
+                                blurRadius: 2,
+                                //offset: Offset(4, 6),
+                              ),
+                            ],
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(12.0),
+                            child: Container(
+                              padding: EdgeInsets.all(2),
+                              height: ch_hi_li,
+                              width: ch_wi_li,
+                              color: Colors.white,
+                              child: Image.asset('images/fg_r.png'),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        print("v");
-                      },
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Container(
-                          padding: EdgeInsets.all(3),
-                          height: ch_hi_li,
-                          width: ch_wi_li,
-                          color: Colors.white,
-                          child: Image.asset('images/nt_r.png'),
+                      TextButton(
+                        onPressed: () {
+                          print("v");
+                        },
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Container(
+                            padding: EdgeInsets.all(3),
+                            height: ch_hi_li,
+                            width: ch_wi_li,
+                            color: Colors.white,
+                            child: Image.asset('images/nt_r.png'),
+                          ),
                         ),
                       ),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        print("v");
-                      },
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Container(
-                          padding: EdgeInsets.all(3),
-                          height: ch_hi_li,
-                          width: ch_wi_li,
-                          color: Colors.white,
-                          child: Image.asset('images/tg_r.png'),
+                      TextButton(
+                        onPressed: () {
+                          print("v");
+                        },
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Container(
+                            padding: EdgeInsets.all(3),
+                            height: ch_hi_li,
+                            width: ch_wi_li,
+                            color: Colors.white,
+                            child: Image.asset('images/tg_r.png'),
+                          ),
                         ),
                       ),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        print("v");
-                      },
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Container(
-                          padding: EdgeInsets.all(3),
-                          height: ch_hi_li,
-                          width: ch_wi_li,
-                          color: Colors.white,
-                          child: Image.asset('images/fg_r.png'),
+                      TextButton(
+                        onPressed: () {
+                          print("v");
+                        },
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Container(
+                            padding: EdgeInsets.all(3),
+                            height: ch_hi_li,
+                            width: ch_wi_li,
+                            color: Colors.white,
+                            child: Image.asset('images/fg_r.png'),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
