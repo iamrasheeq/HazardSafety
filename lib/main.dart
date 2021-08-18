@@ -54,6 +54,11 @@ class hazardBody extends StatefulWidget {
 class _hazardBodyState extends State<hazardBody> {
   double ch_hi_li = 110;
   double ch_wi_li = 85;
+  var hazardName01 = "select a chemical hazard";
+  var hazardName02 = "select a chemical hazard";
+  var dis = "3m";
+  var $picitem01 = 1;
+  var $picitem02 = 2;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -73,9 +78,9 @@ class _hazardBodyState extends State<hazardBody> {
                   borderRadius: BorderRadius.circular(20.0),
                   boxShadow: [
                     BoxShadow(
-                      color: Color(0x40000000),
+                      color: Color(0x25000000),
                       blurRadius: 4,
-                      offset: Offset(4, 6),
+                      offset: Offset(4, 4),
                     ),
                   ],
                 ),
@@ -84,16 +89,16 @@ class _hazardBodyState extends State<hazardBody> {
                   child: Container(
                     height: 120,
                     width: 120,
-                    color: Colors.white,
+                    color: Color(0xFFFFFFFF),
                   ),
                 ),
               ),
               SizedBox(
-                width: 20,
+                width: 15,
               ),
               Container(
                 height: 120,
-                width: 80,
+                width: 90,
                 //color: Colors.blue[100],
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -105,15 +110,39 @@ class _hazardBodyState extends State<hazardBody> {
                       //semanticLabel: 'Text to announce in accessibility modes',
                     ),
                     Container(
+                      //good design container. eta use korbo.
+                      margin: EdgeInsets.only(top: 5),
                       height: 45,
-                      width: 80,
-                      color: Colors.yellow,
-                    )
+                      width: 90,
+                      //color: Colors.white,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Color(0x22000000)),
+                        color: Color(0xC6FFFFFF),
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0x22000000),
+                            blurRadius: 4,
+                            offset: Offset(4, 6),
+                          ),
+                        ],
+                      ),
+                      child: Center(
+                        child: Text(
+                          "$dis",
+                          style: TextStyle(
+                            color: Color(0xBF0D1D24),
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
               SizedBox(
-                width: 20,
+                width: 15,
               ),
               Container(
                 decoration: BoxDecoration(
@@ -121,9 +150,9 @@ class _hazardBodyState extends State<hazardBody> {
                   borderRadius: BorderRadius.circular(20.0),
                   boxShadow: [
                     BoxShadow(
-                      color: Color(0x40000000),
+                      color: Color(0x25000000),
                       blurRadius: 4,
-                      offset: Offset(4, 6),
+                      offset: Offset(4, 4),
                     ),
                   ],
                 ),
@@ -159,17 +188,17 @@ class _hazardBodyState extends State<hazardBody> {
                     color: Colors.white,
                     //margin: EdgeInsets.symmetric(vertical: 2, horizontal: 50),
                     child: ListTile(
-                      leading: Icon(
-                        Icons.filter_1,
-                        size: 20,
-                        color: Colors.blueGrey[900],
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        backgroundImage: AssetImage("images/num1.png"),
                       ),
                       title: Text(
-                        "Select Chemical Hazard 01",
+                        "$hazardName01",
                         style: TextStyle(
                           //   //  fontFamily: 'Source Sans Pro',
-                          color: Colors.blueGrey[900],
-                          fontSize: 20,
+                          color: Color(0xCE0D1D24),
+                          //fontWeight: FontWeight.bold,
+                          fontSize: 22,
                         ),
                       ),
                     ),
@@ -182,19 +211,19 @@ class _hazardBodyState extends State<hazardBody> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     color: Colors.white,
-                    //margin: EdgeInsets.symmetric(vertical: 7, horizontal: 50),
+                    //margin: EdgeInsets.symmetric(vertical: 2, horizontal: 50),
                     child: ListTile(
-                      leading: Icon(
-                        Icons.filter_2,
-                        size: 20,
-                        color: Colors.blueGrey[900],
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        backgroundImage: AssetImage("images/num2.png"),
                       ),
                       title: Text(
-                        "Select Chemical Hazard 02",
+                        "$hazardName02",
                         style: TextStyle(
                           //  fontFamily: 'Source Sans Pro',
-                          color: Colors.blueGrey[900],
-                          fontSize: 20,
+                          color: Color(0xCE0D1D24),
+                          //fontWeight: FontWeight.bold,
+                          fontSize: 22,
                         ),
                       ),
                     ),
@@ -209,7 +238,7 @@ class _hazardBodyState extends State<hazardBody> {
           child: Container(
             height: 400,
             width: double.infinity,
-            color: Color(0xFFF2F6F9),
+            color: Color(0xFFF0F0F0),
             child: Container(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -219,29 +248,26 @@ class _hazardBodyState extends State<hazardBody> {
                     children: [
                       TextButton(
                         onPressed: () {
-                          print("v");
+                          print("1");
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                            //border: Border.all(color: Color(0xA1C1C1C)),
-                            borderRadius: BorderRadius.circular(12.0),
+                            border: Border.all(color: Color(0x22000000)),
+                            color: Color(0xDDFFFFFF),
+                            borderRadius: BorderRadius.circular(16),
                             boxShadow: [
                               BoxShadow(
                                 color: Color(0x22000000),
-                                blurRadius: 2,
-                                //offset: Offset(4, 6),
+                                blurRadius: 4,
+                                offset: Offset(4, 4),
                               ),
                             ],
                           ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(12.0),
-                            child: Container(
-                              padding: EdgeInsets.all(2),
-                              height: ch_hi_li,
-                              width: ch_wi_li,
-                              color: Colors.white,
-                              child: Image.asset('images/fg_r.png'),
-                            ),
+                          child: Container(
+                            //padding: EdgeInsets.all(2),
+                            height: ch_hi_li,
+                            width: ch_wi_li,
+                            child: Image.asset('images/fg_r.png'),
                           ),
                         ),
                       ),
