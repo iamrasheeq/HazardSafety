@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 //import 'dart:math';
 
 void main() {
@@ -19,6 +20,14 @@ class MyApp extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFFFFFFFF),
       appBar: AppBar(
+        backwardsCompatibility: false,
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarColor: Colors.transparent, // transparent status bar
+          systemNavigationBarColor: Colors.black, // navigation bar color
+          statusBarIconBrightness: Brightness.dark, // status bar icons' color
+          systemNavigationBarIconBrightness:
+              Brightness.dark, //navigation bar icons' color
+        ),
         centerTitle: true,
         //elevation: 0,
         title: RichText(
@@ -52,13 +61,27 @@ class hazardBody extends StatefulWidget {
 }
 
 class _hazardBodyState extends State<hazardBody> {
+  void reset() {
+    hazardPic01 = "images/blank.png";
+    hazardPic02 = "images/blank.png";
+    hazardName01 = "select a chemical hazard";
+    hazardName02 = "select a chemical hazard";
+    dis = "....";
+    picitem01 = "images/num1.png";
+    picitem02 = "images/num2.png";
+    selectOne = true;
+  }
+
   double ch_hi_li = 110;
   double ch_wi_li = 85;
+  var hazardPic01 = "images/blank.png";
+  var hazardPic02 = "images/blank.png";
   var hazardName01 = "select a chemical hazard";
   var hazardName02 = "select a chemical hazard";
   var dis = "3m";
-  var $picitem01 = 1;
-  var $picitem02 = 2;
+  var picitem01 = "images/num1.png";
+  var picitem02 = "images/num2.png";
+  bool selectOne = true;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -75,12 +98,13 @@ class _hazardBodyState extends State<hazardBody> {
               Container(
                 decoration: BoxDecoration(
                   border: Border.all(color: Color(0x22000000)),
+                  color: Color(0xC6FFFFFF),
                   borderRadius: BorderRadius.circular(20.0),
                   boxShadow: [
                     BoxShadow(
-                      color: Color(0x25000000),
+                      color: Color(0x22000000),
                       blurRadius: 4,
-                      offset: Offset(4, 4),
+                      offset: Offset(4, 6),
                     ),
                   ],
                 ),
@@ -90,6 +114,7 @@ class _hazardBodyState extends State<hazardBody> {
                     height: 120,
                     width: 120,
                     color: Color(0xFFFFFFFF),
+                    child: Image.asset("$hazardPic01"),
                   ),
                 ),
               ),
@@ -147,12 +172,13 @@ class _hazardBodyState extends State<hazardBody> {
               Container(
                 decoration: BoxDecoration(
                   border: Border.all(color: Color(0x22000000)),
+                  color: Color(0xC6FFFFFF),
                   borderRadius: BorderRadius.circular(20.0),
                   boxShadow: [
                     BoxShadow(
-                      color: Color(0x25000000),
+                      color: Color(0x22000000),
                       blurRadius: 4,
-                      offset: Offset(4, 4),
+                      offset: Offset(4, 6),
                     ),
                   ],
                 ),
@@ -161,7 +187,8 @@ class _hazardBodyState extends State<hazardBody> {
                   child: Container(
                     height: 120,
                     width: 120,
-                    color: Colors.white,
+                    color: Color(0xFFFFFFFF),
+                    child: Image.asset("$hazardPic02"),
                   ),
                 ),
               ),
@@ -190,7 +217,7 @@ class _hazardBodyState extends State<hazardBody> {
                     child: ListTile(
                       leading: CircleAvatar(
                         backgroundColor: Colors.white,
-                        backgroundImage: AssetImage("images/num1.png"),
+                        backgroundImage: AssetImage("$picitem01"),
                       ),
                       title: Text(
                         "$hazardName01",
@@ -198,7 +225,7 @@ class _hazardBodyState extends State<hazardBody> {
                           //   //  fontFamily: 'Source Sans Pro',
                           color: Color(0xCE0D1D24),
                           //fontWeight: FontWeight.bold,
-                          fontSize: 22,
+                          fontSize: 20,
                         ),
                       ),
                     ),
@@ -215,7 +242,7 @@ class _hazardBodyState extends State<hazardBody> {
                     child: ListTile(
                       leading: CircleAvatar(
                         backgroundColor: Colors.white,
-                        backgroundImage: AssetImage("images/num2.png"),
+                        backgroundImage: AssetImage("$picitem02"),
                       ),
                       title: Text(
                         "$hazardName02",
@@ -223,7 +250,7 @@ class _hazardBodyState extends State<hazardBody> {
                           //  fontFamily: 'Source Sans Pro',
                           color: Color(0xCE0D1D24),
                           //fontWeight: FontWeight.bold,
-                          fontSize: 22,
+                          fontSize: 20,
                         ),
                       ),
                     ),
@@ -238,7 +265,19 @@ class _hazardBodyState extends State<hazardBody> {
           child: Container(
             height: 400,
             width: double.infinity,
-            color: Color(0xFFF0F0F0),
+            //color: Color(0xFFF0F0F0),
+            decoration: BoxDecoration(
+              border: Border.all(color: Color(0x22000000)),
+              color: Color(0xFFF0F0F0),
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Color(0x22000000),
+                  blurRadius: 4,
+                  offset: Offset(4, 4),
+                ),
+              ],
+            ),
             child: Container(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -248,6 +287,15 @@ class _hazardBodyState extends State<hazardBody> {
                     children: [
                       TextButton(
                         onPressed: () {
+                          setState(() {
+                            if (selectOne) {
+                              hazardPic01 = "images/fg_r.png";
+                              selectOne = false;
+                            } else {
+                              hazardPic02 = "images/tg_r.png";
+                            }
+                          });
+
                           print("1");
                         },
                         child: Container(
@@ -323,6 +371,42 @@ class _hazardBodyState extends State<hazardBody> {
             ),
           ),
         ),
+        // Padding(
+        //   padding: const EdgeInsets.all(8.0),
+        //   child: Row(
+        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //     children: [
+        //       ElevatedButton(
+        //         onPressed: () {
+        //           setState(() {
+        //             reset();
+        //           });
+        //         },
+        //         child: Icon(Icons.settings_backup_restore, color: Colors.white),
+        //         style: ElevatedButton.styleFrom(
+        //           shape: CircleBorder(),
+        //           padding: EdgeInsets.all(10),
+        //           primary: Colors.red[700], // <-- Button color
+        //           onPrimary: Colors.redAccent, // <-- Splash color
+        //         ),
+        //       ),
+        //       ElevatedButton(
+        //         onPressed: () {
+        //           setState(() {
+        //             reset();
+        //           });
+        //         },
+        //         child: Icon(Icons.arrow_forward, color: Colors.white),
+        //         style: ElevatedButton.styleFrom(
+        //           shape: CircleBorder(),
+        //           padding: EdgeInsets.all(10),
+        //           primary: Colors.green, // <-- Button color
+        //           onPrimary: Colors.greenAccent, // <-- Splash color
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        // )
       ],
     );
   }
