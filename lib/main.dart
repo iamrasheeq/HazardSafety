@@ -532,7 +532,7 @@ class _hazardBodyState extends State<hazardBody> {
                                 ],
                               ),
                               child: Container(
-                                padding: EdgeInsets.all(2),
+                                padding: EdgeInsets.all(1),
                                 //height: ch_hi_li,
                                 //width: ch_wi_li,
                                 child: Image.asset('images/fg.png'),
@@ -573,7 +573,7 @@ class _hazardBodyState extends State<hazardBody> {
                                 ],
                               ),
                               child: Container(
-                                padding: EdgeInsets.all(2),
+                                padding: EdgeInsets.all(1),
                                 //height: ch_hi_li,
                                 //width: ch_wi_li,
                                 child: Image.asset('images/nt.png'),
@@ -615,7 +615,7 @@ class _hazardBodyState extends State<hazardBody> {
                                 ],
                               ),
                               child: Container(
-                                padding: EdgeInsets.all(2),
+                                padding: EdgeInsets.all(1),
                                 //height: ch_hi_li,
                                 //width: ch_wi_li,
                                 child: Image.asset('images/tg.png'),
@@ -657,7 +657,7 @@ class _hazardBodyState extends State<hazardBody> {
                                 ],
                               ),
                               child: Container(
-                                padding: EdgeInsets.all(2),
+                                padding: EdgeInsets.all(1),
                                 //height: ch_hi_li,
                                 //width: ch_wi_li,
                                 child: Image.asset('images/og.png'),
@@ -704,7 +704,7 @@ class _hazardBodyState extends State<hazardBody> {
                                 ],
                               ),
                               child: Container(
-                                padding: EdgeInsets.all(2),
+                                padding: EdgeInsets.all(1),
                                 //height: ch_hi_li,
                                 //width: ch_wi_li,
                                 child: Image.asset('images/fl.png'),
@@ -746,7 +746,7 @@ class _hazardBodyState extends State<hazardBody> {
                                 ],
                               ),
                               child: Container(
-                                padding: EdgeInsets.all(2),
+                                padding: EdgeInsets.all(1),
                                 //height: ch_hi_li,
                                 //width: ch_wi_li,
                                 child: Image.asset('images/fs.png'),
@@ -788,7 +788,7 @@ class _hazardBodyState extends State<hazardBody> {
                                 ],
                               ),
                               child: Container(
-                                padding: EdgeInsets.all(2),
+                                padding: EdgeInsets.all(1),
                                 //height: ch_hi_li,
                                 //width: ch_wi_li,
                                 child: Image.asset('images/sc.png'),
@@ -833,7 +833,7 @@ class _hazardBodyState extends State<hazardBody> {
                                 ],
                               ),
                               child: Container(
-                                padding: EdgeInsets.all(2),
+                                padding: EdgeInsets.all(1),
                                 //height: ch_hi_li,
                                 //width: ch_wi_li,
                                 child: Image.asset('images/dw.png'),
@@ -880,7 +880,7 @@ class _hazardBodyState extends State<hazardBody> {
                                 ],
                               ),
                               child: Container(
-                                padding: EdgeInsets.all(2),
+                                padding: EdgeInsets.all(1),
                                 //height: ch_hi_li,
                                 //width: ch_wi_li,
                                 child: Image.asset('images/oa.png'),
@@ -922,7 +922,7 @@ class _hazardBodyState extends State<hazardBody> {
                                 ],
                               ),
                               child: Container(
-                                padding: EdgeInsets.all(2),
+                                padding: EdgeInsets.all(1),
                                 //height: ch_hi_li,
                                 //width: ch_wi_li,
                                 child: Image.asset('images/op.png'),
@@ -964,7 +964,7 @@ class _hazardBodyState extends State<hazardBody> {
                                 ],
                               ),
                               child: Container(
-                                padding: EdgeInsets.all(2),
+                                padding: EdgeInsets.all(1),
                                 //height: ch_hi_li,
                                 //width: ch_wi_li,
                                 child: Image.asset('images/ts.png'),
@@ -1006,7 +1006,7 @@ class _hazardBodyState extends State<hazardBody> {
                                 ],
                               ),
                               child: Container(
-                                padding: EdgeInsets.all(2),
+                                padding: EdgeInsets.all(1),
                                 //height: ch_hi_li,
                                 //width: ch_wi_li,
                                 child: Image.asset('images/co.png'),
