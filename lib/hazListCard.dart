@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 
 class listCardPro extends StatelessWidget {
-  listCardPro(
-      {required this.onTapHaz,
-      required this.hazardPic,
-      required this.hazIndex});
+  listCardPro({
+    required this.onTapHaz,
+    required this.hazardPic,
+  });
   //final Color cardColor;
   //final Widget cardChild;
   //final int value;
   final VoidCallback onTapHaz;
   final String hazardPic;
-  int hazIndex;
+
   @override
   Widget build(BuildContext context) {
     return TextButton(

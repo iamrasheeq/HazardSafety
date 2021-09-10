@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 double ch_hi_li = 110;
 //double ch_wi_li = 85;
-int hazIndex = 0;
+
 var hazardPic01 = "blank";
 var hazardPic02 = "blank";
 var hazardName01 = "select a chemical hazard";
@@ -11,20 +11,6 @@ var dis = "";
 var picitem01 = "num1";
 var picitem02 = "num2";
 bool selectOne = true;
-
-void tapFunc() {
-  if (selectOne) {
-    hazardName01 = hazardName_en[hazIndex];
-    hazardPic01 = hazardPhoto[hazIndex];
-    picitem01 = hazardPhoto[hazIndex];
-    selectOne = false;
-  } else {
-    picitem02 = hazardPhoto[hazIndex];
-    hazardPic02 = hazardPhoto[hazIndex];
-    hazardName02 = hazardName_en[hazIndex];
-    dis = hazardData[indexOne(hazardName01)][hazIndex];
-  }
-}
 
 void reset() {
   hazardPic01 = "blank";

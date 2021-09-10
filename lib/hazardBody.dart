@@ -4,8 +4,6 @@ import 'hazShowCard.dart';
 import 'constants.dart';
 
 class hazardBody extends StatefulWidget {
-  const hazardBody({Key? key}) : super(key: key);
-
   @override
   _hazardBodyState createState() => _hazardBodyState();
 }
@@ -189,18 +187,26 @@ class _hazardBodyState extends State<hazardBody> {
                           child: listCardPro(
                             onTapHaz: () {
                               setState(() {
-                                tapFunc();
+                                if (selectOne) {
+                                  hazardName01 = hazardName_en[0];
+                                  hazardPic01 = hazardPhoto[0];
+                                  picitem01 = hazardPhoto[0];
+                                  selectOne = false;
+                                } else {
+                                  picitem02 = hazardPhoto[0];
+                                  hazardPic02 = hazardPhoto[0];
+                                  hazardName02 = hazardName_en[0];
+                                  dis = hazardData[indexOne(hazardName01)][0];
+                                }
                               });
-
-                              print(hazIndex);
+                              // print(hazIndex);
                             },
-                            hazardPic: hazardPhoto[hazIndex],
-                            hazIndex: 0,
+                            hazardPic: hazardPhoto[0],
                           ),
                         ),
                         Expanded(
-                          child: TextButton(
-                            onPressed: () {
+                          child: listCardPro(
+                            onTapHaz: () {
                               setState(() {
                                 if (selectOne) {
                                   hazardName01 = hazardName_en[1];
@@ -214,40 +220,19 @@ class _hazardBodyState extends State<hazardBody> {
                                   dis = hazardData[indexOne(hazardName01)][1];
                                 }
                               });
-
-                              print("1");
+                              // print(hazIndex);
                             },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Color(0x22000000)),
-                                color: Color(0xDDFFFFFF),
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Color(0x22000000),
-                                    blurRadius: 4,
-                                    offset: Offset(4, 4),
-                                  ),
-                                ],
-                              ),
-                              child: Container(
-                                padding: EdgeInsets.all(2),
-                                //height: ch_hi_li,
-                                //width: ch_wi_li,
-                                child: Image.asset('images/nt.png'),
-                              ),
-                            ),
+                            hazardPic: hazardPhoto[1],
                           ),
                         ),
                         Expanded(
-                          child: TextButton(
-                            onPressed: () {
+                          child: listCardPro(
+                            onTapHaz: () {
                               setState(() {
                                 if (selectOne) {
                                   hazardName01 = hazardName_en[2];
                                   hazardPic01 = hazardPhoto[2];
                                   picitem01 = hazardPhoto[2];
-
                                   selectOne = false;
                                 } else {
                                   picitem02 = hazardPhoto[2];
@@ -256,40 +241,19 @@ class _hazardBodyState extends State<hazardBody> {
                                   dis = hazardData[indexOne(hazardName01)][2];
                                 }
                               });
-
-                              print("2");
+                              // print(hazIndex);
                             },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Color(0x22000000)),
-                                color: Color(0xDDFFFFFF),
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Color(0x22000000),
-                                    blurRadius: 4,
-                                    offset: Offset(4, 4),
-                                  ),
-                                ],
-                              ),
-                              child: Container(
-                                padding: EdgeInsets.all(2),
-                                //height: ch_hi_li,
-                                //width: ch_wi_li,
-                                child: Image.asset('images/tg.png'),
-                              ),
-                            ),
+                            hazardPic: hazardPhoto[2],
                           ),
                         ),
                         Expanded(
-                          child: TextButton(
-                            onPressed: () {
+                          child: listCardPro(
+                            onTapHaz: () {
                               setState(() {
                                 if (selectOne) {
                                   hazardName01 = hazardName_en[3];
                                   hazardPic01 = hazardPhoto[3];
                                   picitem01 = hazardPhoto[3];
-
                                   selectOne = false;
                                 } else {
                                   picitem02 = hazardPhoto[3];
@@ -298,45 +262,25 @@ class _hazardBodyState extends State<hazardBody> {
                                   dis = hazardData[indexOne(hazardName01)][3];
                                 }
                               });
-
-                              print("3");
+                              // print(hazIndex);
                             },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Color(0x22000000)),
-                                color: Color(0xDDFFFFFF),
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Color(0x22000000),
-                                    blurRadius: 4,
-                                    offset: Offset(4, 4),
-                                  ),
-                                ],
-                              ),
-                              child: Container(
-                                padding: EdgeInsets.all(2),
-                                //height: ch_hi_li,
-                                //width: ch_wi_li,
-                                child: Image.asset('images/og.png'),
-                              ),
-                            ),
+                            hazardPic: hazardPhoto[3],
                           ),
                         ),
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      //crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Expanded(
-                          child: TextButton(
-                            onPressed: () {
+                          child: listCardPro(
+                            onTapHaz: () {
                               setState(() {
                                 if (selectOne) {
                                   hazardName01 = hazardName_en[4];
                                   hazardPic01 = hazardPhoto[4];
                                   picitem01 = hazardPhoto[4];
-
                                   selectOne = false;
                                 } else {
                                   picitem02 = hazardPhoto[4];
@@ -345,40 +289,19 @@ class _hazardBodyState extends State<hazardBody> {
                                   dis = hazardData[indexOne(hazardName01)][4];
                                 }
                               });
-
-                              print("4");
+                              // print(hazIndex);
                             },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Color(0x22000000)),
-                                color: Color(0xDDFFFFFF),
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Color(0x22000000),
-                                    blurRadius: 4,
-                                    offset: Offset(4, 4),
-                                  ),
-                                ],
-                              ),
-                              child: Container(
-                                padding: EdgeInsets.all(2),
-                                //height: ch_hi_li,
-                                //width: ch_wi_li,
-                                child: Image.asset('images/fl.png'),
-                              ),
-                            ),
+                            hazardPic: hazardPhoto[4],
                           ),
                         ),
                         Expanded(
-                          child: TextButton(
-                            onPressed: () {
+                          child: listCardPro(
+                            onTapHaz: () {
                               setState(() {
                                 if (selectOne) {
                                   hazardName01 = hazardName_en[5];
                                   hazardPic01 = hazardPhoto[5];
                                   picitem01 = hazardPhoto[5];
-
                                   selectOne = false;
                                 } else {
                                   picitem02 = hazardPhoto[5];
@@ -387,40 +310,19 @@ class _hazardBodyState extends State<hazardBody> {
                                   dis = hazardData[indexOne(hazardName01)][5];
                                 }
                               });
-
-                              print("5");
+                              // print(hazIndex);
                             },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Color(0x22000000)),
-                                color: Color(0xDDFFFFFF),
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Color(0x22000000),
-                                    blurRadius: 4,
-                                    offset: Offset(4, 4),
-                                  ),
-                                ],
-                              ),
-                              child: Container(
-                                padding: EdgeInsets.all(2),
-                                //height: ch_hi_li,
-                                //width: ch_wi_li,
-                                child: Image.asset('images/fs.png'),
-                              ),
-                            ),
+                            hazardPic: hazardPhoto[5],
                           ),
                         ),
                         Expanded(
-                          child: TextButton(
-                            onPressed: () {
+                          child: listCardPro(
+                            onTapHaz: () {
                               setState(() {
                                 if (selectOne) {
                                   hazardName01 = hazardName_en[6];
                                   hazardPic01 = hazardPhoto[6];
                                   picitem01 = hazardPhoto[6];
-
                                   selectOne = false;
                                 } else {
                                   picitem02 = hazardPhoto[6];
@@ -429,90 +331,46 @@ class _hazardBodyState extends State<hazardBody> {
                                   dis = hazardData[indexOne(hazardName01)][6];
                                 }
                               });
-
-                              print("6");
+                              // print(hazIndex);
                             },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Color(0x22000000)),
-                                color: Color(0xDDFFFFFF),
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Color(0x22000000),
-                                    blurRadius: 4,
-                                    offset: Offset(4, 4),
-                                  ),
-                                ],
-                              ),
-                              child: Container(
-                                padding: EdgeInsets.all(2),
-                                //height: ch_hi_li,
-                                //width: ch_wi_li,
-                                child: Image.asset('images/sc.png'),
-                              ),
-                            ),
+                            hazardPic: hazardPhoto[6],
                           ),
                         ),
                         Expanded(
-                          child: TextButton(
-                            onPressed: () {
+                          child: listCardPro(
+                            onTapHaz: () {
                               setState(() {
                                 if (selectOne) {
                                   hazardName01 = hazardName_en[7];
                                   hazardPic01 = hazardPhoto[7];
                                   picitem01 = hazardPhoto[7];
-
                                   selectOne = false;
                                 } else {
                                   picitem02 = hazardPhoto[7];
                                   hazardPic02 = hazardPhoto[7];
                                   hazardName02 = hazardName_en[7];
-                                  // var i1 = indexOne(hazardName01);
-                                  // var i2 = indexOne(hazardName02);
-                                  // print("$i1 , $i2");
                                   dis = hazardData[indexOne(hazardName01)][7];
                                 }
                               });
-
-                              print("7");
+                              // print(hazIndex);
                             },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Color(0x22000000)),
-                                color: Color(0xDDFFFFFF),
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Color(0x22000000),
-                                    blurRadius: 4,
-                                    offset: Offset(4, 4),
-                                  ),
-                                ],
-                              ),
-                              child: Container(
-                                padding: EdgeInsets.all(2),
-                                //height: ch_hi_li,
-                                //width: ch_wi_li,
-                                child: Image.asset('images/dw.png'),
-                              ),
-                            ),
+                            hazardPic: hazardPhoto[7],
                           ),
                         ),
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      //crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Expanded(
-                          child: TextButton(
-                            onPressed: () {
+                          child: listCardPro(
+                            onTapHaz: () {
                               setState(() {
                                 if (selectOne) {
                                   hazardName01 = hazardName_en[8];
                                   hazardPic01 = hazardPhoto[8];
                                   picitem01 = hazardPhoto[8];
-
                                   selectOne = false;
                                 } else {
                                   picitem02 = hazardPhoto[8];
@@ -521,40 +379,19 @@ class _hazardBodyState extends State<hazardBody> {
                                   dis = hazardData[indexOne(hazardName01)][8];
                                 }
                               });
-
-                              print("8");
+                              // print(hazIndex);
                             },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Color(0x22000000)),
-                                color: Color(0xDDFFFFFF),
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Color(0x22000000),
-                                    blurRadius: 4,
-                                    offset: Offset(4, 4),
-                                  ),
-                                ],
-                              ),
-                              child: Container(
-                                padding: EdgeInsets.all(2),
-                                //height: ch_hi_li,
-                                //width: ch_wi_li,
-                                child: Image.asset('images/oa.png'),
-                              ),
-                            ),
+                            hazardPic: hazardPhoto[8],
                           ),
                         ),
                         Expanded(
-                          child: TextButton(
-                            onPressed: () {
+                          child: listCardPro(
+                            onTapHaz: () {
                               setState(() {
                                 if (selectOne) {
                                   hazardName01 = hazardName_en[9];
                                   hazardPic01 = hazardPhoto[9];
                                   picitem01 = hazardPhoto[9];
-
                                   selectOne = false;
                                 } else {
                                   picitem02 = hazardPhoto[9];
@@ -563,40 +400,19 @@ class _hazardBodyState extends State<hazardBody> {
                                   dis = hazardData[indexOne(hazardName01)][9];
                                 }
                               });
-
-                              print("9");
+                              // print(hazIndex);
                             },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Color(0x22000000)),
-                                color: Color(0xDDFFFFFF),
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Color(0x22000000),
-                                    blurRadius: 4,
-                                    offset: Offset(4, 4),
-                                  ),
-                                ],
-                              ),
-                              child: Container(
-                                padding: EdgeInsets.all(2),
-                                //height: ch_hi_li,
-                                //width: ch_wi_li,
-                                child: Image.asset('images/op.png'),
-                              ),
-                            ),
+                            hazardPic: hazardPhoto[9],
                           ),
                         ),
                         Expanded(
-                          child: TextButton(
-                            onPressed: () {
+                          child: listCardPro(
+                            onTapHaz: () {
                               setState(() {
                                 if (selectOne) {
                                   hazardName01 = hazardName_en[10];
                                   hazardPic01 = hazardPhoto[10];
                                   picitem01 = hazardPhoto[10];
-
                                   selectOne = false;
                                 } else {
                                   picitem02 = hazardPhoto[10];
@@ -605,40 +421,19 @@ class _hazardBodyState extends State<hazardBody> {
                                   dis = hazardData[indexOne(hazardName01)][10];
                                 }
                               });
-
-                              print("10");
+                              // print(hazIndex);
                             },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Color(0x22000000)),
-                                color: Color(0xDDFFFFFF),
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Color(0x22000000),
-                                    blurRadius: 4,
-                                    offset: Offset(4, 4),
-                                  ),
-                                ],
-                              ),
-                              child: Container(
-                                padding: EdgeInsets.all(2),
-                                //height: ch_hi_li,
-                                //width: ch_wi_li,
-                                child: Image.asset('images/ts.png'),
-                              ),
-                            ),
+                            hazardPic: hazardPhoto[10],
                           ),
                         ),
                         Expanded(
-                          child: TextButton(
-                            onPressed: () {
+                          child: listCardPro(
+                            onTapHaz: () {
                               setState(() {
                                 if (selectOne) {
                                   hazardName01 = hazardName_en[11];
                                   hazardPic01 = hazardPhoto[11];
                                   picitem01 = hazardPhoto[11];
-
                                   selectOne = false;
                                 } else {
                                   picitem02 = hazardPhoto[11];
@@ -647,29 +442,9 @@ class _hazardBodyState extends State<hazardBody> {
                                   dis = hazardData[indexOne(hazardName01)][11];
                                 }
                               });
-
-                              print("11");
+                              // print(hazIndex);
                             },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Color(0x22000000)),
-                                color: Color(0xDDFFFFFF),
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Color(0x22000000),
-                                    blurRadius: 4,
-                                    offset: Offset(4, 4),
-                                  ),
-                                ],
-                              ),
-                              child: Container(
-                                padding: EdgeInsets.all(2),
-                                //height: ch_hi_li,
-                                //width: ch_wi_li,
-                                child: Image.asset('images/co.png'),
-                              ),
-                            ),
+                            hazardPic: hazardPhoto[11],
                           ),
                         ),
                       ],
