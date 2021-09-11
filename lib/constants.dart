@@ -2,17 +2,22 @@ import 'package:flutter/material.dart';
 
 double ch_hi_li = 110;
 //double ch_wi_li = 85;
-
+const Color popTextColor = Color(0xFF000000);
+const Color popCardColor = Color(0xFFFFFFFF);
+Color popCard = Colors.black;
 var hazardPic01 = "blank";
 var hazardPic02 = "blank";
 var hazardName01 = "select a chemical hazard";
 var hazardName02 = "select a chemical hazard";
 var dis = "";
+var interpretation = "";
 var picitem01 = "num1";
 var picitem02 = "num2";
 bool selectOne = true;
 
+
 void reset() {
+  Color cardColor = Colors.white;
   hazardPic01 = "blank";
   hazardPic02 = "blank";
   hazardName01 = "select a chemical hazard";
@@ -128,3 +133,14 @@ int indexOne(String nam) {
   }
   return i;
 }
+const ResultTextStyle = TextStyle(
+  color: popTextColor,
+  fontSize: 22.0,
+  fontWeight: FontWeight.bold,
+);
+
+const DistanceTextStyle = TextStyle(
+  color: popTextColor,
+  fontSize: 100.0,
+  fontWeight: FontWeight.bold,
+);

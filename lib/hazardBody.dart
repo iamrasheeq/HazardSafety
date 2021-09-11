@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'hazListCard.dart';
 import 'hazShowCard.dart';
 import 'constants.dart';
+import 'popUpHazard.dart';
 
 class hazardBody extends StatefulWidget {
   @override
@@ -44,36 +45,36 @@ class _hazardBodyState extends State<hazardBody> {
                         size: 30.0,
                         //semanticLabel: 'Text to announce in accessibility modes',
                       ),
-                      Container(
-                        //good design container. eta use korbo.
-                        margin: EdgeInsets.only(top: 5),
-                        height: 45,
-                        width: 90,
-                        //color: Colors.white,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Color(0x22000000)),
-                          color: Color(0xC6FFFFFF),
-                          //color: Colors.green,
-                          borderRadius: BorderRadius.circular(16),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Color(0x22000000),
-                              blurRadius: 4,
-                              offset: Offset(4, 6),
-                            ),
-                          ],
-                        ),
-                        child: Center(
-                          child: Text(
-                            "$dis",
-                            style: TextStyle(
-                              color: Color(0xBF0D1D24),
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
+                      // Container(
+                      //   //good design container. eta use korbo.
+                      //   margin: EdgeInsets.only(top: 5),
+                      //   height: 45,
+                      //   width: 90,
+                      //   //color: Colors.white,
+                      //   decoration: BoxDecoration(
+                      //     border: Border.all(color: Color(0x22000000)),
+                      //     color: Color(0xC6FFFFFF),
+                      //     //color: Colors.green,
+                      //     borderRadius: BorderRadius.circular(16),
+                      //     boxShadow: [
+                      //       BoxShadow(
+                      //         color: Color(0x22000000),
+                      //         blurRadius: 4,
+                      //         offset: Offset(4, 6),
+                      //       ),
+                      //     ],
+                      //   ),
+                      //   child: Center(
+                      //     child: Text(
+                      //       "$dis",
+                      //       style: TextStyle(
+                      //         color: Color(0xBF0D1D24),
+                      //         fontSize: 25,
+                      //         fontWeight: FontWeight.bold,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),
@@ -196,7 +197,7 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[0];
                                   hazardPic02 = hazardPhoto[0];
                                   hazardName02 = hazardName_en[0];
-                                  dis = hazardData[indexOne(hazardName01)][0];
+
                                 }
                               });
                               // print(hazIndex);
@@ -217,7 +218,7 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[1];
                                   hazardPic02 = hazardPhoto[1];
                                   hazardName02 = hazardName_en[1];
-                                  dis = hazardData[indexOne(hazardName01)][1];
+
                                 }
                               });
                               // print(hazIndex);
@@ -238,7 +239,7 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[2];
                                   hazardPic02 = hazardPhoto[2];
                                   hazardName02 = hazardName_en[2];
-                                  dis = hazardData[indexOne(hazardName01)][2];
+
                                 }
                               });
                               // print(hazIndex);
@@ -259,7 +260,7 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[3];
                                   hazardPic02 = hazardPhoto[3];
                                   hazardName02 = hazardName_en[3];
-                                  dis = hazardData[indexOne(hazardName01)][3];
+
                                 }
                               });
                               // print(hazIndex);
@@ -286,7 +287,7 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[4];
                                   hazardPic02 = hazardPhoto[4];
                                   hazardName02 = hazardName_en[4];
-                                  dis = hazardData[indexOne(hazardName01)][4];
+
                                 }
                               });
                               // print(hazIndex);
@@ -307,7 +308,7 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[5];
                                   hazardPic02 = hazardPhoto[5];
                                   hazardName02 = hazardName_en[5];
-                                  dis = hazardData[indexOne(hazardName01)][5];
+
                                 }
                               });
                               // print(hazIndex);
@@ -328,7 +329,7 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[6];
                                   hazardPic02 = hazardPhoto[6];
                                   hazardName02 = hazardName_en[6];
-                                  dis = hazardData[indexOne(hazardName01)][6];
+
                                 }
                               });
                               // print(hazIndex);
@@ -349,7 +350,7 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[7];
                                   hazardPic02 = hazardPhoto[7];
                                   hazardName02 = hazardName_en[7];
-                                  dis = hazardData[indexOne(hazardName01)][7];
+
                                 }
                               });
                               // print(hazIndex);
@@ -376,7 +377,7 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[8];
                                   hazardPic02 = hazardPhoto[8];
                                   hazardName02 = hazardName_en[8];
-                                  dis = hazardData[indexOne(hazardName01)][8];
+
                                 }
                               });
                               // print(hazIndex);
@@ -397,7 +398,7 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[9];
                                   hazardPic02 = hazardPhoto[9];
                                   hazardName02 = hazardName_en[9];
-                                  dis = hazardData[indexOne(hazardName01)][9];
+
                                 }
                               });
                               // print(hazIndex);
@@ -418,7 +419,7 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[10];
                                   hazardPic02 = hazardPhoto[10];
                                   hazardName02 = hazardName_en[10];
-                                  dis = hazardData[indexOne(hazardName01)][10];
+
                                 }
                               });
                               // print(hazIndex);
@@ -439,7 +440,7 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[11];
                                   hazardPic02 = hazardPhoto[11];
                                   hazardName02 = hazardName_en[11];
-                                  dis = hazardData[indexOne(hazardName01)][11];
+
                                 }
                               });
                               // print(hazIndex);
@@ -462,22 +463,66 @@ class _hazardBodyState extends State<hazardBody> {
             color: Colors.white,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    reset();
-                  });
-                },
-                child: Icon(Icons.settings_backup_restore,
-                    color: Color(0x830D1D24)),
-                style: ElevatedButton.styleFrom(
-                  //shadowColor: Colors.black,
-                  shape: CircleBorder(),
-                  //padding: EdgeInsets.all(10),
-                  primary: Colors.white, // <-- Button color
-                  onPrimary: Colors.red[700], // <-- Splash color
-                ),
-              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  FloatingActionButton(
+                      backgroundColor: Colors.white,
+                      onPressed: (){
+
+                      },
+                      child: Icon(
+                        Icons.keyboard_arrow_left,
+                          color: Color(0x830D1D24)),
+                  ),
+                  FloatingActionButton(
+                    backgroundColor: Colors.white,
+                    onPressed: () {
+                      setState(() {
+
+                        reset();
+
+                      });
+                    },
+                    child: Icon(
+                        Icons.loop,
+                        color: Color(0x830D1D24)),
+                  ),
+                  FloatingActionButton(
+                    backgroundColor: Colors.white,
+                    onPressed: () {
+                      setState(() {
+                        dis = hazardData[indexOne(hazardName01)][indexOne(hazardName02)];
+                        if(dis == "3m"){
+
+                        }else if(dis == "5m"){
+                          print("5");
+                          popCard = Colors.amber;
+
+                        }else if(dis == "OK"){
+
+                        }else if(dis == "Isolate"){
+
+                        }else if(dis == "Apart"){
+
+                        }else if(dis == "N/A"){
+
+                        }
+
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => PopUpHazard(distance: dis,interpretation: "hi", popColor: popCard,)),
+                        );
+                      });
+                    },
+                    child: Icon(
+                        Icons.keyboard_arrow_right,
+                        color: Color(0x830D1D24),
+                    ),
+                  ),
+
+                ],
+              )
               // child: Row(
               //   mainAxisAlignment: MainAxisAlignment.center,
               //   children: [
