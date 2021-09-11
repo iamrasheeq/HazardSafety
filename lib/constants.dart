@@ -2,27 +2,30 @@ import 'package:flutter/material.dart';
 
 double ch_hi_li = 110;
 //double ch_wi_li = 85;
-const Color popTextColor = Color(0xFF000000);
-const Color popCardColor = Color(0xFFFFFFFF);
-Color popCard = Colors.black;
+
 var hazardPic01 = "blank";
 var hazardPic02 = "blank";
 var hazardName01 = "select a chemical hazard";
 var hazardName02 = "select a chemical hazard";
 var dis = "";
+var unit = "";
+String intp = "";
 var interpretation = "";
 var picitem01 = "num1";
 var picitem02 = "num2";
 bool selectOne = true;
-
-
+Color cardColor = Colors.white;
+Color popInsColor = Colors.white;
 void reset() {
-  Color cardColor = Colors.white;
+  unit = "";
+  cardColor = Colors.white;
+  popInsColor = Colors.white;
   hazardPic01 = "blank";
   hazardPic02 = "blank";
   hazardName01 = "select a chemical hazard";
   hazardName02 = "select a chemical hazard";
   dis = "";
+  intp = "";
   picitem01 = "num1";
   picitem02 = "num2";
   selectOne = true;
@@ -43,54 +46,15 @@ var hazardName_en = [
   "Corrosive"
 ];
 var hazardData = [
-  ["OK", "OK", "3m", "3m", "5m", "5m", "5m", "5m", "3m", "Isolate", "3m", "5m"],
-  ["OK", "OK", "OK", "OK", "5m", "5m", "5m", "5m", "3m", "Isolate", "3m", "5m"],
-  [
-    "3m",
-    "OK",
-    "N/A",
-    "3m",
-    "5m",
-    "5m",
-    "5m",
-    "5m",
-    "3m",
-    "Isolate",
-    "3m",
-    "5m"
-  ],
-  ["3m", "OK", "3m", "OK", "5m", "5m", "5m", "5m", "3m", "Isolate", "3m", "5m"],
-  ["5m", "5m", "5m", "5m", "OK", "3m", "5m", "5m", "5m", "Isolate", "5m", "3m"],
-  [
-    "5m",
-    "5m",
-    "5m",
-    "5m",
-    "3m",
-    "OK",
-    "3m",
-    "5m",
-    "3m",
-    "Isolate",
-    "3m",
-    "N/A"
-  ],
-  ["5m", "5m", "5m", "5m", "5m", "3m", "OK", "5m", "5m", "Isolate", "3m", "3m"],
-  ["5m", "5m", "5m", "5m", "5m", "5m", "5m", "OK", "5m", "Isolate", "3m", "5m"],
-  [
-    "3m",
-    "3m",
-    "5m",
-    "5m",
-    "5m",
-    "Apart",
-    "5m",
-    "5m",
-    "N/A",
-    "Isolate",
-    "3m",
-    "3m"
-  ],
+  ["OK", "OK", "3", "3", "5", "5", "5", "5", "3", "Isolate", "3", "5"],
+  ["OK", "OK", "OK", "OK", "5", "5", "5", "5", "3", "Isolate", "3", "5"],
+  ["3", "OK", "N/A", "3", "5", "5", "5", "5", "3", "Isolate", "3", "5"],
+  ["3", "OK", "3", "OK", "5", "5", "5", "5", "3", "Isolate", "3", "5"],
+  ["5", "5", "5", "5", "OK", "3", "5", "5", "5", "Isolate", "5", "3"],
+  ["5", "5", "5", "5", "3", "OK", "3", "5", "3", "Isolate", "3", "N/A"],
+  ["5", "5", "5", "5", "5", "3", "OK", "5", "5", "Isolate", "3", "3"],
+  ["5", "5", "5", "5", "5", "5", "5", "OK", "5", "Isolate", "3", "5"],
+  ["5", "5", "5", "5", "5", "Apart", "5", "5", "N/A", "Isolate", "3", "3"],
   [
     "Isolate",
     "Isolate",
@@ -103,10 +67,10 @@ var hazardData = [
     "Isolate",
     "OK",
     "Isolate",
-    "3m"
+    "3"
   ],
-  ["3m", "3m", "3m", "3m", "5m", "3m", "3m", "3m", "3m", "Isolate", "Ok", "5m"],
-  ["5m", "5m", "5m", "5m", "3m", "N/A", "3m", "5m", "3m", "3m", "5m", "N/A"],
+  ["3", "3", "3", "3", "5", "3", "3", "3", "3", "Isolate", "Ok", "5"],
+  ["5", "5", "5", "5", "3", "N/A", "3", "5", "3", "3", "5", "N/A"],
 ];
 var hazardPhoto = [
   "fg",
@@ -133,14 +97,23 @@ int indexOne(String nam) {
   }
   return i;
 }
+
 const ResultTextStyle = TextStyle(
-  color: popTextColor,
+  //color: popTextColor,
   fontSize: 22.0,
-  fontWeight: FontWeight.bold,
+  fontWeight: FontWeight.w600,
 );
 
 const DistanceTextStyle = TextStyle(
-  color: popTextColor,
+  //color: popTextColor,
   fontSize: 100.0,
   fontWeight: FontWeight.bold,
+);
+const conLabelBigText = TextStyle(
+  fontSize: 100,
+  fontWeight: FontWeight.w900,
+);
+const conLabel = TextStyle(
+  fontSize: 35,
+  fontWeight: FontWeight.w800,
 );

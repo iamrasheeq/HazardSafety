@@ -197,7 +197,6 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[0];
                                   hazardPic02 = hazardPhoto[0];
                                   hazardName02 = hazardName_en[0];
-
                                 }
                               });
                               // print(hazIndex);
@@ -218,7 +217,6 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[1];
                                   hazardPic02 = hazardPhoto[1];
                                   hazardName02 = hazardName_en[1];
-
                                 }
                               });
                               // print(hazIndex);
@@ -239,7 +237,6 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[2];
                                   hazardPic02 = hazardPhoto[2];
                                   hazardName02 = hazardName_en[2];
-
                                 }
                               });
                               // print(hazIndex);
@@ -260,7 +257,6 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[3];
                                   hazardPic02 = hazardPhoto[3];
                                   hazardName02 = hazardName_en[3];
-
                                 }
                               });
                               // print(hazIndex);
@@ -287,7 +283,6 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[4];
                                   hazardPic02 = hazardPhoto[4];
                                   hazardName02 = hazardName_en[4];
-
                                 }
                               });
                               // print(hazIndex);
@@ -308,7 +303,6 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[5];
                                   hazardPic02 = hazardPhoto[5];
                                   hazardName02 = hazardName_en[5];
-
                                 }
                               });
                               // print(hazIndex);
@@ -329,7 +323,6 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[6];
                                   hazardPic02 = hazardPhoto[6];
                                   hazardName02 = hazardName_en[6];
-
                                 }
                               });
                               // print(hazIndex);
@@ -350,7 +343,6 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[7];
                                   hazardPic02 = hazardPhoto[7];
                                   hazardName02 = hazardName_en[7];
-
                                 }
                               });
                               // print(hazIndex);
@@ -377,7 +369,6 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[8];
                                   hazardPic02 = hazardPhoto[8];
                                   hazardName02 = hazardName_en[8];
-
                                 }
                               });
                               // print(hazIndex);
@@ -398,7 +389,6 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[9];
                                   hazardPic02 = hazardPhoto[9];
                                   hazardName02 = hazardName_en[9];
-
                                 }
                               });
                               // print(hazIndex);
@@ -419,7 +409,6 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[10];
                                   hazardPic02 = hazardPhoto[10];
                                   hazardName02 = hazardName_en[10];
-
                                 }
                               });
                               // print(hazIndex);
@@ -440,7 +429,6 @@ class _hazardBodyState extends State<hazardBody> {
                                   picitem02 = hazardPhoto[11];
                                   hazardPic02 = hazardPhoto[11];
                                   hazardName02 = hazardName_en[11];
-
                                 }
                               });
                               // print(hazIndex);
@@ -462,102 +450,116 @@ class _hazardBodyState extends State<hazardBody> {
             width: double.infinity,
             color: Colors.white,
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  FloatingActionButton(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FloatingActionButton(
                       backgroundColor: Colors.white,
-                      onPressed: (){
+                      onPressed: () {},
+                      child: Icon(Icons.keyboard_arrow_left,
+                          color: Color(0x830D1D24)),
+                    ),
+                    FloatingActionButton(
+                      backgroundColor: Colors.white,
+                      onPressed: () {
+                        setState(() {
+                          reset();
+                        });
+                      },
+                      child: Icon(Icons.loop, color: Color(0x830D1D24)),
+                    ),
+                    FloatingActionButton(
+                      backgroundColor: Colors.white,
+                      onPressed: () {
+                        setState(() {
+                          dis = hazardData[indexOne(hazardName01)]
+                              [indexOne(hazardName02)];
+                          if (dis == "3") {
+                            popInsColor = Colors.amberAccent;
+                            intp =
+                                "You Can Place The Chemical Hazards In 3 Meters Distance";
+                            unit = "meters";
+                          } else if (dis == "5") {
+                            intp =
+                                "You Can Place The Chemical Hazards In 5 Meters Distance";
+                            unit = "meters";
+                            popInsColor = Colors.orangeAccent;
+                          } else if (dis == "OK") {
+                            intp =
+                                "It Is Safe To Place The Chemical Hazards Together";
+                            unit = "";
+                            popInsColor = Color(0xFFB6D7A8);
+                          } else if (dis == "Isolate") {
+                            intp =
+                                "You Can Not Place The Chemical Hazards Together";
+                            unit = "";
+                            popInsColor = Colors.redAccent;
+                          } else if (dis == "Apart") {
+                            intp =
+                                "You Can Not Place The Chemical Hazards Together";
+                            unit = "";
+                            popInsColor = Colors.redAccent;
+                          } else if (dis == "N/A") {
+                            intp =
+                                "For These Chemical Hazards Distance Is Not Applicable";
+                            unit = "";
+                          }
 
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PopUpHazard(
+                                      distance: dis,
+                                      interpretation: intp,
+                                      popColor: popInsColor,
+                                      unitDis: unit,
+                                    )),
+                          );
+                        });
                       },
                       child: Icon(
-                        Icons.keyboard_arrow_left,
-                          color: Color(0x830D1D24)),
-                  ),
-                  FloatingActionButton(
-                    backgroundColor: Colors.white,
-                    onPressed: () {
-                      setState(() {
-
-                        reset();
-
-                      });
-                    },
-                    child: Icon(
-                        Icons.loop,
-                        color: Color(0x830D1D24)),
-                  ),
-                  FloatingActionButton(
-                    backgroundColor: Colors.white,
-                    onPressed: () {
-                      setState(() {
-                        dis = hazardData[indexOne(hazardName01)][indexOne(hazardName02)];
-                        if(dis == "3m"){
-
-                        }else if(dis == "5m"){
-                          print("5");
-                          popCard = Colors.amber;
-
-                        }else if(dis == "OK"){
-
-                        }else if(dis == "Isolate"){
-
-                        }else if(dis == "Apart"){
-
-                        }else if(dis == "N/A"){
-
-                        }
-
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => PopUpHazard(distance: dis,interpretation: "hi", popColor: popCard,)),
-                        );
-                      });
-                    },
-                    child: Icon(
                         Icons.keyboard_arrow_right,
                         color: Color(0x830D1D24),
+                      ),
                     ),
-                  ),
-
-                ],
-              )
-              // child: Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: [
-              //     ElevatedButton(
-              //       onPressed: () {
-              //         setState(() {
-              //           reset();
-              //         });
-              //       },
-              //       child: Icon(Icons.settings_backup_restore,
-              //           color: Colors.white),
-              //       style: ElevatedButton.styleFrom(
-              //         shape: CircleBorder(),
-              //         padding: EdgeInsets.all(10),
-              //         primary: Colors.red[700], // <-- Button color
-              //         onPrimary: Colors.redAccent, // <-- Splash color
-              //       ),
-              //     ),
-              //     ElevatedButton(
-              //       onPressed: () {
-              //         setState(() {
-              //           reset();
-              //         });
-              //       },
-              //       child: Icon(Icons.arrow_forward, color: Colors.white),
-              //       style: ElevatedButton.styleFrom(
-              //         shape: CircleBorder(),
-              //         padding: EdgeInsets.all(10),
-              //         primary: Colors.green, // <-- Button color
-              //         onPrimary: Colors.greenAccent, // <-- Splash color
-              //       ),
-              //     ),
-              //   ],
-              // ),
-            ),
+                  ],
+                )
+                // child: Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //     ElevatedButton(
+                //       onPressed: () {
+                //         setState(() {
+                //           reset();
+                //         });
+                //       },
+                //       child: Icon(Icons.settings_backup_restore,
+                //           color: Colors.white),
+                //       style: ElevatedButton.styleFrom(
+                //         shape: CircleBorder(),
+                //         padding: EdgeInsets.all(10),
+                //         primary: Colors.red[700], // <-- Button color
+                //         onPrimary: Colors.redAccent, // <-- Splash color
+                //       ),
+                //     ),
+                //     ElevatedButton(
+                //       onPressed: () {
+                //         setState(() {
+                //           reset();
+                //         });
+                //       },
+                //       child: Icon(Icons.arrow_forward, color: Colors.white),
+                //       style: ElevatedButton.styleFrom(
+                //         shape: CircleBorder(),
+                //         padding: EdgeInsets.all(10),
+                //         primary: Colors.green, // <-- Button color
+                //         onPrimary: Colors.greenAccent, // <-- Splash color
+                //       ),
+                //     ),
+                //   ],
+                // ),
+                ),
           ),
         ),
       ],

@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'resultCard.dart';
 import 'hazShowCard.dart';
 import 'constants.dart';
 
 class PopUpHazard extends StatelessWidget {
-  PopUpHazard({required this.distance, required this.interpretation, required this.popColor});
+  PopUpHazard(
+      {required this.distance,
+      required this.interpretation,
+      required this.popColor,
+      required this.unitDis});
   final String distance;
+  final String unitDis;
   final String interpretation;
   final Color popColor;
   @override
@@ -20,7 +24,7 @@ class PopUpHazard extends StatelessWidget {
           //systemNavigationBarColor: Colors.white, // navigation bar color
           statusBarIconBrightness: Brightness.light, // status bar icons' color
           systemNavigationBarIconBrightness:
-          Brightness.light, //navigation bar icons' color
+              Brightness.light, //navigation bar icons' color
         ),
         centerTitle: true,
         //elevation: 0,
@@ -75,7 +79,6 @@ class PopUpHazard extends StatelessWidget {
                           size: 30.0,
                           //semanticLabel: 'Text to announce in accessibility modes',
                         ),
-
                       ],
                     ),
                   ),
@@ -113,7 +116,8 @@ class PopUpHazard extends StatelessWidget {
                         child: ListTile(
                           leading: CircleAvatar(
                             backgroundColor: Colors.white,
-                            backgroundImage: AssetImage("images/$picitem01.png"),
+                            backgroundImage:
+                                AssetImage("images/$picitem01.png"),
                           ),
                           title: Text(
                             "$hazardName01",
@@ -138,7 +142,8 @@ class PopUpHazard extends StatelessWidget {
                         child: ListTile(
                           leading: CircleAvatar(
                             backgroundColor: Colors.white,
-                            backgroundImage: AssetImage("images/$picitem02.png"),
+                            backgroundImage:
+                                AssetImage("images/$picitem02.png"),
                           ),
                           title: Text(
                             "$hazardName02",
@@ -178,16 +183,43 @@ class PopUpHazard extends StatelessWidget {
                   ),
                   child: Expanded(
                     flex: 5,
-                    child: ResultCard(
-                      ResultCardColour: popColor,
-                      cardChild: Column(
+                    child: Container(
+                      margin: EdgeInsets.all(30.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Color(0x22000000)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0x22000000),
+                            blurRadius: 4,
+                            offset: Offset(4, 6),
+                          ),
+                        ],
+                        color: popColor,
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text(
-                            distance,
-                            style: DistanceTextStyle,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.baseline,
+                            textBaseline: TextBaseline.alphabetic,
+                            children: [
+                              Text(
+                                distance,
+                                style: conLabelBigText,
+                              ),
+                              Text(
+                                unitDis,
+                                style: conLabel,
+                              ),
+                            ],
                           ),
+                          // Text(
+                          //   distance,
+                          //   style: DistanceTextStyle,
+                          // ),
                           Text(
                             interpretation,
                             textAlign: TextAlign.center,
@@ -197,8 +229,7 @@ class PopUpHazard extends StatelessWidget {
                       ),
                     ),
                   ),
-                )
-            ),
+                )),
           ),
           Expanded(
             flex: 2,
@@ -209,14 +240,12 @@ class PopUpHazard extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: FloatingActionButton(
                   backgroundColor: Colors.white,
-                  onPressed: (){
+                  onPressed: () {
                     Navigator.pop(context);
                   },
-                  child: Icon(
-                      Icons.keyboard_arrow_left,
-                      color: Color(0x830D1D24)),
+                  child:
+                      Icon(Icons.keyboard_arrow_left, color: Color(0x830D1D24)),
                 ),
-
               ),
             ),
           ),
@@ -225,4 +254,3 @@ class PopUpHazard extends StatelessWidget {
     );
   }
 }
-
