@@ -16,14 +16,16 @@ class _SplashState extends State<Splash> {
     navigateToHome();
   }
 
-  navigateToHome() async{
+  navigateToHome() async {
     await Future.delayed(Duration(milliseconds: 1500), () {});
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MyApp()));
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => MyApp()));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.white,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -33,8 +35,7 @@ class _SplashState extends State<Splash> {
                   width: 200,
                   child: Image(
                     image: AssetImage('images/splashLogo.png'),
-                  )
-              ),
+                  )),
               SizedBox(height: 10),
               RichText(
                 text: TextSpan(
@@ -53,8 +54,6 @@ class _SplashState extends State<Splash> {
               ),
             ],
           ),
-        )
-    );
+        ));
   }
 }
-
