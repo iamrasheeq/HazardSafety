@@ -198,3 +198,32 @@ const conBodyDetals = TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.w400,
 );
+const homeTitle = TextStyle(
+  color: Colors.black,
+  fontFamily: 'Pacifico',
+  letterSpacing: 2,
+  //color: Color(0x9C0D1D24),
+  fontSize: 25,
+  //fontWeight: FontWeight.w600,
+);
+
+Color colorLanBody1 = Colors.black;
+Color colorLanBody2 = Colors.white;
+Color colorLanText1 = Colors.white;
+Color colorLanText2 = Colors.grey;
+var lan = "0";
+// var myCC2 = myinC;
+//
+void cardLanColor(lan) {
+  if (lan == "0") {
+    colorLanBody1 = Colors.black;
+    colorLanBody2 = Colors.white;
+    colorLanText1 = Colors.white;
+    colorLanText2 = Colors.grey;
+  } else if (lan == "1") {
+    colorLanBody2 = Colors.black;
+    colorLanBody1 = Colors.white;
+    colorLanText2 = Colors.white;
+    colorLanText1 = Colors.grey;
+  }
+}
