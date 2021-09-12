@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:hazard_safety/splash.dart';
 import 'homeHazard.dart';
 import 'package:flutter/services.dart';
-import 'package:hazard_safety/hazardList.dart';
-import 'hazardBody.dart';
-//import 'dart:math';
+
+import 'package:flutter/services.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,

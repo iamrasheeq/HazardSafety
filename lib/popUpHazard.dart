@@ -164,72 +164,67 @@ class PopUpHazard extends StatelessWidget {
           ),
           Expanded(
             flex: 10,
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(20.0),
-                child: Container(
-                  width: double.infinity,
-                  //color: Color(0xFFF0F0F0),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Color(0x22000000)),
-                    color: Color(0xFFF0F0F0),
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color(0x22000000),
-                        blurRadius: 4,
-                        offset: Offset(4, 4),
-                      ),
-                    ],
+            child: Container(
+              width: double.infinity,
+              //color: Color(0xFFF0F0F0),
+              decoration: BoxDecoration(
+                border: Border.all(color: Color(0x22000000)),
+                color: Color(0xFFF0F0F0),
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0x22000000),
+                    blurRadius: 4,
+                    offset: Offset(4, 4),
                   ),
-                  child: Expanded(
-                    flex: 5,
-                    child: Container(
-                      margin: EdgeInsets.all(30.0),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Color(0x22000000)),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color(0x22000000),
-                            blurRadius: 4,
-                            offset: Offset(4, 6),
-                          ),
-                        ],
-                        color: popColor,
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.baseline,
-                            textBaseline: TextBaseline.alphabetic,
-                            children: [
-                              Text(
-                                distance,
-                                style: conLabelBigText,
-                              ),
-                              Text(
-                                unitDis,
-                                style: conLabel,
-                              ),
-                            ],
-                          ),
-                          // Text(
-                          //   distance,
-                          //   style: DistanceTextStyle,
-                          // ),
-                          Text(
-                            interpretation,
-                            textAlign: TextAlign.center,
-                            style: ResultTextStyle,
-                          ),
-                        ],
-                      ),
+                ],
+              ),
+              child: Container(
+                margin: EdgeInsets.all(30.0),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Color(0x22000000)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0x22000000),
+                      blurRadius: 4,
+                      offset: Offset(4, 6),
                     ),
-                  ),
-                )),
+                  ],
+                  color: popColor,
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: [
+                        Text(
+                          distance,
+                          style: conLabelBigText,
+                        ),
+                        Text(
+                          unitDis,
+                          style: conLabel,
+                        ),
+                      ],
+                    ),
+                    // Text(
+                    //   distance,
+                    //   style: DistanceTextStyle,
+                    // ),
+                    Text(
+                      interpretation,
+                      textAlign: TextAlign.center,
+                      style: ResultTextStyle,
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
           Expanded(
             flex: 2,
