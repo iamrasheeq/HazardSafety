@@ -84,9 +84,12 @@ class _hazardListState extends State<hazardList> {
                         hazardName_en[index],
                         textAlign: TextAlign.center,
                         style: TextStyle(
+                            fontFamily: 'Source Sans Pro',
+                            letterSpacing: .5,
                             fontSize: 16,
                             color: Color(0x830D1D24),
-                            fontWeight: FontWeight.w400),
+                            //color: Color(0x9C0D1D24),
+                            fontWeight: FontWeight.w500),
                       ),
                     ),
                   ],

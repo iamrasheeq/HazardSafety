@@ -113,6 +113,57 @@ int indexOne(String nam) {
   return i;
 }
 
+var hazardDetalsData = [
+  [
+    "These burn when mixed with an oxidant and provided with a source of ignition. Fuel gas that has leaked may form an ignitable mixture with the surrounding air, resulting in fire or explosion.",
+    "Acetylene, ammonia, hydrogen, propane, propylene and methane"
+  ],
+  [
+    "Gases which are asphyxiants (gases which dilute or replace the oxygen in the atmosphere); or are oxidizing (gases which may, generally by providing oxygen, cause or contribute to the combustion of other material more than air does)",
+    "compressed air, nitrogen, argon, carbon dioxide, and helium"
+  ],
+  [
+    "Toxic gas can cause damage to living tissue, the central nervous system, severe illness, or even death. Some toxic gases are not visible, cannot be smelled, and/or they may not have an immediate effect but can be the cause of death.",
+    "carbon monoxide, chlorine, nitrogen dioxide and phosgene"
+  ],
+  [
+    "Oxidizing gas means any gas which may, generally by providing oxygen, cause or contribute to the combustion of other materials more than air does",
+    "chlorine, nitrous oxide, oxygen, and compressed air"
+  ],
+  [
+    "Liquids which can be easily ignited in air at ambient temperatures, i.e. it has a flash point at or below nominal threshold temperatures defined by a number of national and international standards organisations",
+    "gasoline, acetone, toluene, diethyl ether, alcohol"
+  ],
+  [
+    "Flammable solid is a solid object that is combustible or that may be a contributor to a fire through friction or brief contact with a source of ignition",
+    "metallic hydrides, metallic sodium and potassium, oily fabrics, processed metals, matches, and nitrocellulose products"
+  ],
+  [
+    "Spontaneously combustible materials are also known as pyrophorics; these chemicals can spontaneously ignite in the presence of air, some are reactive with water vapor, and most are reactive with oxygen",
+    "tert-Butyllithium under Hexanes and White Phosphorus"
+  ],
+  [
+    "Dangerous when wet material means a material that, by contact with water, gives off flammable or toxic gas.",
+    "sodium, calcium, potassium and calcium carbide"
+  ],
+  [
+    "Oxidizing materials may be toxic or corrosive. Depending on the material, route of exposure (inhalation, eye or skin contact, or swallowing) and dose, they could harm the body. Corrosive oxidizers can also attack and destroy metal",
+    "Hydrogen peroxide, ozone, oxygen, potassium nitrate, and nitric acid"
+  ],
+  [
+    "Organic peroxides are their fire and explosion hazards. Organic peroxides may also be toxic or corrosive. Depending on the material, route of exposure",
+    "methyl ethyl ketone peroxide"
+  ],
+  [
+    "A toxic substance is a substance that can be poisonous or cause health effects",
+    "Radon in basements, lead in drinking water, exhausts from cars and chemicals released from landfills"
+  ],
+  [
+    "Corrosives are materials that can attack and chemically destroy exposed body tissues. Corrosives can also damage or even destroy metal. They begin to cause damage as soon as they touch the skin, eyes, respiratory tract, digestive tract, or the metal.",
+    " hydrochloric acid, sulfuric acid, nitric acid, chromic acid, acetic acid and hydrofluoric acid"
+  ],
+];
+
 const ResultTextStyle = TextStyle(
   //color: popTextColor,
   fontSize: 22.0,
@@ -134,19 +185,16 @@ const conLabel = TextStyle(
 );
 const conTitleDetals = TextStyle(
   //color: Color(0xB00D1D24),
+  fontFamily: 'Source Sans Pro',
+  letterSpacing: 2,
   color: Colors.black,
-  fontSize: 25,
+  fontSize: 20,
   fontWeight: FontWeight.w800,
 );
 const conBodyDetals = TextStyle(
+  fontFamily: 'Source Sans Pro',
+  letterSpacing: 1,
   color: Color(0x9C0D1D24),
-  fontSize: 20,
-  fontWeight: FontWeight.w500,
+  fontSize: 16,
+  fontWeight: FontWeight.w400,
 );
-
-var hazardDetalsData = [
-  [
-    "These burn when mixed with an oxidant and provided with a source of ignition. Fuel gas that has leaked may form an ignitable mixture with the surrounding air, resulting in fire or explosion.",
-    "Acetylene, ammonia, hydrogen, propane, propylene and methane"
-  ],
-];
