@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hazard_safety/splash.dart';
 import 'homeHazard.dart';
 import 'package:flutter/services.dart';
 import 'package:hazard_safety/hazardList.dart';
@@ -10,7 +11,7 @@ void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyApp(),
+      home: Splash(),
     ),
   );
 }
