@@ -17,7 +17,7 @@ class reuseCard extends StatelessWidget {
     return GestureDetector(
       onTap: onPress,
       child: Container(
-        //height: double.infinity,
+        height: double.infinity,
         //width: double.infinity,
         decoration: BoxDecoration(
           border: Border.all(color: Color(0x22000000)),
@@ -27,11 +27,14 @@ class reuseCard extends StatelessWidget {
         ),
         child: Container(
           padding: EdgeInsets.all(10),
-          child: Text(
-            nameLan,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: colorText,
+          child: Align(
+            alignment: Alignment.center,
+            child: Text(
+              nameLan,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: colorText,
+              ),
             ),
           ),
         ),

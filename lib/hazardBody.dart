@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hazard_safety/hazardList.dart';
+import 'package:hazard_safety/titleBox.dart';
 import 'hazListCard.dart';
 import 'hazShowCard.dart';
 import 'constants.dart';
@@ -27,13 +29,13 @@ enum HazList {
 }
 
 class _hazardBodyState extends State<hazardBody> {
-  void goNext() {
-    resultPage(dis);
+  void goNext(var distanceHaz) {
+    resultPage(distanceHaz);
     Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) => PopUpHazard(
-          distance: dis,
+          distance: distanceHaz,
           interpretation: intp,
           popColor: popInsColor,
           unitDis: unit,
@@ -53,8 +55,8 @@ class _hazardBodyState extends State<hazardBody> {
         picitem02 = hazardPhoto[indexValue];
         hazardPic02 = hazardPhoto[indexValue];
         hazardName02 = hazardName_en[indexValue];
-        dis = hazardData[indexOne(hazardName01)][indexOne(hazardName02)];
-        //goNext();
+        dis = hazardData[getIndex(hazardName01)][getIndex(hazardName02)];
+        goNext(dis);
       }
     } else {
       if (selectOne) {
@@ -66,8 +68,8 @@ class _hazardBodyState extends State<hazardBody> {
         picitem02 = hazardPhoto[indexValue];
         hazardPic02 = hazardPhoto[indexValue];
         hazardName02 = hazardName_bn[indexValue];
-        dis = hazardData[indexOne(hazardName01)][indexOne(hazardName02)];
-        //goNext();
+        dis = hazardData[getIndex(hazardName01)][getIndex(hazardName02)];
+        goNext(dis);
       }
     }
   }
@@ -107,7 +109,7 @@ class _hazardBodyState extends State<hazardBody> {
       body: Column(
         children: [
           Expanded(
-            flex: 2,
+            flex: 5,
             child: Container(
               height: double.infinity,
               width: double.infinity,
@@ -129,16 +131,38 @@ class _hazardBodyState extends State<hazardBody> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           FloatingActionButton(
-                            heroTag: "btn2",
+                            heroTag: "btn1",
                             backgroundColor: Colors.white,
                             onPressed: () {
-                              selectCard = HazList.haz12;
                               setState(() {
+                                selectCard = HazList.haz12;
                                 reset();
                               });
                             },
                             child: Icon(Icons.loop, color: Color(0x830D1D24)),
                           ),
+                          // Expanded(
+                          //   child: Padding(
+                          //     padding: EdgeInsets.all(7),
+                          //     child: Container(
+                          //       child: FloatingActionButton(
+                          //         heroTag: "btn2",
+                          //         backgroundColor: Colors.white,
+                          //         onPressed: () {
+                          //           setState(() {
+                          //             dis = hazardData[indexOne(hazardName01)]
+                          //                 [indexOne(hazardName02)];
+                          //             goNext(dis);
+                          //             //print(dis);
+                          //           });
+                          //         },
+                          //         child: Icon(Icons.drag_handle,
+                          //             color: Color(0x830D1D24)),
+                          //       ),
+                          //     ),
+                          //   ),
+                          // )
+
 //                           Icon(
 //                             Icons.add_circle_outline,
 //                             color: Color(0x830D1D24),
@@ -189,81 +213,96 @@ class _hazardBodyState extends State<hazardBody> {
             ),
           ),
           Expanded(
-            flex: 2,
+            flex: 4,
             child: Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20.0),
-                child: Container(
-//height: 130,
-                  width: double.infinity,
-//color: Color(0x63DCE7EC),
-                  child: Column(
-                    children: [
-                      Expanded(
-                        child: Card(
-                          elevation: 4,
-                          shadowColor: Colors.black,
-                          shape: RoundedRectangleBorder(
-//side: BorderSide(color: Colors.white70, width: 5),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          color: Colors.white,
-//margin: EdgeInsets.symmetric(vertical: 2, horizontal: 50),
-                          child: ListTile(
-                            leading: CircleAvatar(
-                              backgroundColor: Colors.white,
-                              backgroundImage:
-                                  AssetImage("images/$picitem01.png"),
-                            ),
-                            title: Text(
-                              "$hazardName01",
-                              style: TextStyle(
-//   //  fontFamily: 'Source Sans Pro',
-                                color: Color(0xCE0D1D24),
-//fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Card(
-                          elevation: 4,
-                          shadowColor: Colors.black,
-                          shape: RoundedRectangleBorder(
-//side: BorderSide(color: Colors.white70, width: 5),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          color: Colors.white,
-//margin: EdgeInsets.symmetric(vertical: 2, horizontal: 50),
-                          child: ListTile(
-                            leading: CircleAvatar(
-                              backgroundColor: Colors.white,
-                              backgroundImage:
-                                  AssetImage("images/$picitem02.png"),
-                            ),
-                            title: Text(
-                              "$hazardName02",
-                              style: TextStyle(
-//  fontFamily: 'Source Sans Pro',
-                                color: Color(0xCE0D1D24),
-//fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+              padding: EdgeInsets.symmetric(vertical: 5),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                      child: titleBox(name: hazardName01, logo: picitem01)),
+                  Expanded(
+                      child: titleBox(name: hazardName02, logo: picitem02)),
+                ],
               ),
             ),
           ),
+//           Expanded(
+//             flex: 2,
+//             child: Padding(
+//               padding: const EdgeInsets.all(4.0),
+//               child: ClipRRect(
+//                 borderRadius: BorderRadius.circular(20.0),
+//                 child: Container(
+// //height: 130,
+//                   width: double.infinity,
+// //color: Color(0x63DCE7EC),
+//                   child: Column(
+//                     children: [
+//                       Expanded(
+//                         child: Card(
+//                           elevation: 4,
+//                           shadowColor: Colors.black,
+//                           shape: RoundedRectangleBorder(
+// //side: BorderSide(color: Colors.white70, width: 5),
+//                             borderRadius: BorderRadius.circular(20),
+//                           ),
+//                           color: Colors.white,
+// //margin: EdgeInsets.symmetric(vertical: 2, horizontal: 50),
+//                           child: ListTile(
+//                             leading: CircleAvatar(
+//                               backgroundColor: Colors.white,
+//                               backgroundImage:
+//                                   AssetImage("images/$picitem01.png"),
+//                             ),
+//                             title: Text(
+//                               "$hazardName01",
+//                               style: TextStyle(
+// //   //  fontFamily: 'Source Sans Pro',
+//                                 color: Color(0xCE0D1D24),
+// //fontWeight: FontWeight.bold,
+//                                 fontSize: 20,
+//                               ),
+//                             ),
+//                           ),
+//                         ),
+//                       ),
+//                       Expanded(
+//                         child: Card(
+//                           elevation: 4,
+//                           shadowColor: Colors.black,
+//                           shape: RoundedRectangleBorder(
+// //side: BorderSide(color: Colors.white70, width: 5),
+//                             borderRadius: BorderRadius.circular(20),
+//                           ),
+//                           color: Colors.white,
+// //margin: EdgeInsets.symmetric(vertical: 2, horizontal: 50),
+//                           child: ListTile(
+//                             leading: CircleAvatar(
+//                               backgroundColor: Colors.white,
+//                               backgroundImage:
+//                                   AssetImage("images/$picitem02.png"),
+//                             ),
+//                             title: Text(
+//                               "$hazardName02",
+//                               style: TextStyle(
+// //  fontFamily: 'Source Sans Pro',
+//                                 color: Color(0xCE0D1D24),
+// //fontWeight: FontWeight.bold,
+//                                 fontSize: 20,
+//                               ),
+//                             ),
+//                           ),
+//                         ),
+//                       )
+//                     ],
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ),
           Expanded(
-            flex: 6,
+            flex: 12,
             child: Padding(
               padding: EdgeInsets.only(bottom: 15),
               child: Container(

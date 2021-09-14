@@ -25,6 +25,9 @@ class _hazardListState extends State<hazardList> {
               Brightness.light, //navigation bar icons' color
         ),
         centerTitle: true,
+        iconTheme: IconThemeData(
+          color: Colors.black, //change your color here
+        ),
         //elevation: 0,
         title: RichText(
           text: TextSpan(
@@ -87,7 +90,7 @@ class _hazardListState extends State<hazardList> {
                             fontFamily: 'Source Sans Pro',
                             letterSpacing: .5,
                             fontSize: 16,
-                            color: Color(0x830D1D24),
+                            color: Color(0x990D1D24),
                             //color: Color(0x9C0D1D24),
                             fontWeight: FontWeight.w500),
                       ),

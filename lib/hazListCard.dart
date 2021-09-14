@@ -19,7 +19,7 @@ class listCardPro extends StatelessWidget {
     return GestureDetector(
       onTap: onTapHaz,
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 5),
+        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 5),
         child: Container(
           height: double.infinity,
           width: double.infinity,

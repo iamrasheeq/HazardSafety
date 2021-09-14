@@ -24,12 +24,7 @@ class hazShowCard extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.all(4.0),
-        child: Container(
-          height: double.infinity,
-          width: double.infinity,
-          color: Color(0xFFFFFFFF),
-          child: Image.asset("images/$cardPhoto.png"),
-        ),
+        child: Image.asset("images/$cardPhoto.png"),
       ),
     );
   }

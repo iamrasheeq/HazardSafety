@@ -4,12 +4,15 @@ double ch_hi_li = 110;
 //double ch_wi_li = 85;
 Color conCardInActiveC = Color(0xFFFFFFFF);
 Color conCardActiveC = Color(0xC4FFFFFF);
+var welcome = "Welcome,";
+var homeBoxTitle01 = "Distance By Symbol";
+var homeBoxTitle02 = "Hazardpedia";
 var cardNameList = "";
 var hazardPic01 = "blank";
 var hazardPic02 = "blank";
 var hazardName01 = "select a chemical hazard";
 var hazardName02 = "select a chemical hazard";
-var dis = "";
+var dis = "3";
 var unit = "";
 String intp = "";
 var interpretation = "";
@@ -20,6 +23,7 @@ bool en = true;
 Color cardColor = Colors.white;
 Color popInsColor = Colors.white;
 void reset() {
+  //cardLanColor("0");
   unit = "";
   cardColor = Colors.white;
   popInsColor = Colors.white;
@@ -27,12 +31,12 @@ void reset() {
   hazardPic02 = "blank";
   hazardName01 = "select a chemical hazard";
   hazardName02 = "select a chemical hazard";
+
   dis = "";
   intp = "";
   picitem01 = "num1";
   picitem02 = "num2";
   selectOne = true;
-  en = true;
 }
 
 var hazardName_bn = [
@@ -145,15 +149,26 @@ var hazardPhoto = [
   "ts",
   "co"
 ];
-int indexOne(String nam) {
+int getIndex(String nam) {
   int i;
-  for (i = 0; i < hazardName_en.length; i++) {
-    if (nam == hazardName_en[i]) {
-      break;
-    } else {
-      continue;
+  if (en) {
+    for (i = 0; i < hazardName_en.length; i++) {
+      if (nam == hazardName_en[i]) {
+        break;
+      } else {
+        continue;
+      }
+    }
+  } else {
+    for (i = 0; i < hazardName_bn.length; i++) {
+      if (nam == hazardName_bn[i]) {
+        break;
+      } else {
+        continue;
+      }
     }
   }
+
   return i;
 }
 
@@ -210,6 +225,8 @@ var hazardDetalsData = [
 
 const ResultTextStyle = TextStyle(
   //color: popTextColor,
+  //fontFamily: 'Source Sans Pro',
+  letterSpacing: 1,
   fontSize: 22.0,
   fontWeight: FontWeight.w600,
 );
@@ -243,12 +260,13 @@ const conBodyDetals = TextStyle(
   fontWeight: FontWeight.w400,
 );
 const homeTitle = TextStyle(
+  //color: Color(0xBF0D1D24),
   color: Colors.black,
-  fontFamily: 'Pacifico',
+  fontFamily: 'Source Sans Pro',
   letterSpacing: 2,
   //color: Color(0x9C0D1D24),
   fontSize: 25,
-  //fontWeight: FontWeight.w600,
+  fontWeight: FontWeight.w400,
 );
 
 Color colorLanBody1 = Colors.black;
@@ -275,27 +293,43 @@ void cardLanColor(lan) {
 void resultPage(var dis) {
   if (dis == "3") {
     popInsColor = Colors.amberAccent;
-    intp = "You Can Place The Chemical Hazards In 3 Meters Distance";
-    unit = "meters";
+    intp = (en)
+        ? "You Can Place The Chemical Hazards In 5 Meters Distance"
+        : "আপনি রাসায়নিকগুলি ৩ মিটার দূরত্বে রাখতে পারবেন";
+    //unit = "meters";
+    unit = "3";
   } else if (dis == "5") {
-    intp = "You Can Place The Chemical Hazards In 5 Meters Distance";
-    unit = "meters";
+    intp = (en)
+        ? "You Can Place The Chemical Hazards In 5 Meters Distance"
+        : "আপনি রাসায়নিকগুলি ৫ মিটার দূরত্বে রাখতে পারবেন";
+
+    unit = "5";
     popInsColor = Colors.orangeAccent;
   } else if (dis == "OK") {
-    intp = "It Is Safe To Place The Chemical Hazards Together";
-    unit = "";
+    intp = (en)
+        ? "It Is Safe To Place The Chemical Hazards Together"
+        : "আপনি রাসায়নিকগুলি নিরাপদে একসাথে রাখতে পারবেন";
+    unit = "ok";
     popInsColor = Color(0xFFB6D7A8);
   } else if (dis == "Isolate") {
-    intp = "You Can Not Place The Chemical Hazards Together";
-    unit = "";
+    intp = (en)
+        ? "Isolate! You Can Not Place The Chemical Hazards"
+        : "আপনি রাসায়নিকগুলি একসাথে রাখতে পারবেন না";
+
+    unit = "block";
     popInsColor = Colors.redAccent;
   } else if (dis == "Apart") {
-    intp = "You Can Not Place The Chemical Hazards Together";
-    unit = "";
+    intp = (en)
+        ? "Apart! You Can Not Place The Chemical Hazards"
+        : "আপনি রাসায়নিকগুলি একসাথে রাখতে পারবেন না";
+    unit = "block";
     popInsColor = Colors.redAccent;
   } else if (dis == "N/A") {
     popInsColor = Colors.white;
-    intp = "For These Chemical Hazards Distance Is Not Applicable";
-    unit = "";
+
+    intp = (en)
+        ? "For the Chemical Hazards Distance Is Not Applicable"
+        : "রাসায়নিকগুলির জন্য দূরত্ব প্রযোজ্য নয়";
+    unit = "na";
   }
 }
