@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 double ch_hi_li = 110;
 //double ch_wi_li = 85;
+Color conCardInActiveC = Color(0xFFFFFFFF);
+Color conCardActiveC = Color(0xC4FFFFFF);
 var cardNameList = "";
 var hazardPic01 = "blank";
 var hazardPic02 = "blank";
@@ -14,6 +16,7 @@ var interpretation = "";
 var picitem01 = "num1";
 var picitem02 = "num2";
 bool selectOne = true;
+bool en = true;
 Color cardColor = Colors.white;
 Color popInsColor = Colors.white;
 void reset() {
@@ -29,6 +32,7 @@ void reset() {
   picitem01 = "num1";
   picitem02 = "num2";
   selectOne = true;
+  en = true;
 }
 
 var hazardName_bn = [
@@ -265,5 +269,33 @@ void cardLanColor(lan) {
     colorLanBody1 = Colors.white;
     colorLanText2 = Colors.white;
     colorLanText1 = Colors.grey;
+  }
+}
+
+void resultPage(var dis) {
+  if (dis == "3") {
+    popInsColor = Colors.amberAccent;
+    intp = "You Can Place The Chemical Hazards In 3 Meters Distance";
+    unit = "meters";
+  } else if (dis == "5") {
+    intp = "You Can Place The Chemical Hazards In 5 Meters Distance";
+    unit = "meters";
+    popInsColor = Colors.orangeAccent;
+  } else if (dis == "OK") {
+    intp = "It Is Safe To Place The Chemical Hazards Together";
+    unit = "";
+    popInsColor = Color(0xFFB6D7A8);
+  } else if (dis == "Isolate") {
+    intp = "You Can Not Place The Chemical Hazards Together";
+    unit = "";
+    popInsColor = Colors.redAccent;
+  } else if (dis == "Apart") {
+    intp = "You Can Not Place The Chemical Hazards Together";
+    unit = "";
+    popInsColor = Colors.redAccent;
+  } else if (dis == "N/A") {
+    popInsColor = Colors.white;
+    intp = "For These Chemical Hazards Distance Is Not Applicable";
+    unit = "";
   }
 }

@@ -8,6 +8,8 @@ class hazShowCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: double.infinity,
+      width: double.infinity,
       decoration: BoxDecoration(
         border: Border.all(color: Color(0x22000000)),
         color: Color(0xFFFFFFFF),
@@ -20,16 +22,13 @@ class hazShowCard extends StatelessWidget {
           ),
         ],
       ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20.0),
-        child: Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: Container(
-            height: 120,
-            width: 120,
-            color: Color(0xFFFFFFFF),
-            child: Image.asset("images/$cardPhoto.png"),
-          ),
+      child: Padding(
+        padding: const EdgeInsets.all(4.0),
+        child: Container(
+          height: double.infinity,
+          width: double.infinity,
+          color: Color(0xFFFFFFFF),
+          child: Image.asset("images/$cardPhoto.png"),
         ),
       ),
     );
