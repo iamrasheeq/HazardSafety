@@ -36,7 +36,10 @@ class _homeHazardState extends State<homeHazard> {
                     flex: 6,
                     child: Align(
                       alignment: Alignment.topLeft,
-                      child: Text(welcome, style: homeTitle),
+                      child: Text(
+                        welcome,
+                        style: homeTitle,
+                      ),
                     ),
                   ),
                   Expanded(

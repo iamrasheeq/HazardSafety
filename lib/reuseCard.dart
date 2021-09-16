@@ -26,16 +26,26 @@ class reuseCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
         ),
         child: Container(
-          padding: EdgeInsets.all(10),
+          padding: EdgeInsets.all(5),
           child: Align(
             alignment: Alignment.center,
-            child: Text(
-              nameLan,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: colorText,
+            child: FittedBox(
+              fit: BoxFit.fitWidth,
+              child: Text(
+                nameLan,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: colorText,
+                ),
               ),
             ),
+            // child: Text(
+            //   nameLan,
+            //   textAlign: TextAlign.center,
+            //   style: TextStyle(
+            //     color: colorText,
+            //   ),
+            // ),
           ),
         ),
       ),

@@ -1,9 +1,17 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'constants.dart';
 
 class PopHazardDetails extends StatelessWidget {
   PopHazardDetails({required this.hazIndex});
+  String exmp = "";
+  String detail = "";
+  String name = "";
+  var name_en = ["Symbol:", "Name:", "Description:", "Examples:"];
+  var name_bn = ["প্রতীক:", "নাম:", "বিবরণ:", "উদাহরণ:"];
+  var temp = ["", "", "", ""];
+
   final int hazIndex;
   @override
   Widget build(BuildContext context) {
@@ -66,7 +74,7 @@ class PopHazardDetails extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      "Symbol:",
+                                      temp[0] = en ? name_en[0] : name_bn[0],
                                       style: conTitleDetals,
                                     ),
                                   ],
@@ -75,7 +83,7 @@ class PopHazardDetails extends StatelessWidget {
                               Expanded(
                                 flex: 2,
                                 child: Padding(
-                                  padding: EdgeInsets.only(top: 5, bottom: 5),
+                                  padding: EdgeInsets.symmetric(vertical: 5),
                                   child: Container(
                                     decoration: BoxDecoration(
                                       border: Border.all(
@@ -93,8 +101,11 @@ class PopHazardDetails extends StatelessWidget {
                                     ),
                                     height: double.infinity,
                                     width: double.infinity,
-                                    child:
-                                        Image.asset(hazardListPhoto[hazIndex]),
+                                    child: Padding(
+                                        padding:
+                                            EdgeInsets.symmetric(vertical: 5),
+                                        child: Image.asset(
+                                            hazardListPhoto[hazIndex])),
                                   ),
                                 ),
                               ),
@@ -114,7 +125,7 @@ class PopHazardDetails extends StatelessWidget {
                                 child: Align(
                                   alignment: Alignment.bottomLeft,
                                   child: Text(
-                                    "Name:",
+                                    temp[1] = en ? name_en[1] : name_bn[1],
                                     //textAlign: TextAlign.start,
                                     style: conTitleDetals,
                                   ),
@@ -142,7 +153,9 @@ class PopHazardDetails extends StatelessWidget {
                                   child: Align(
                                     alignment: Alignment.center,
                                     child: Text(
-                                      hazardName_en[hazIndex],
+                                      name = en
+                                          ? hazardName_en[hazIndex]
+                                          : hazardName_bn[hazIndex],
                                       //textAlign: TextAlign.start,
                                       style: conBodyDetals,
                                     ),
@@ -165,7 +178,7 @@ class PopHazardDetails extends StatelessWidget {
                                 child: Align(
                                   alignment: Alignment.bottomLeft,
                                   child: Text(
-                                    "Description:",
+                                    temp[2] = en ? name_en[2] : name_bn[2],
                                     //textAlign: TextAlign.start,
                                     style: conTitleDetals,
                                   ),
@@ -196,7 +209,9 @@ class PopHazardDetails extends StatelessWidget {
                                     child: Align(
                                       alignment: Alignment.center,
                                       child: Text(
-                                        hazardDetalsData[hazIndex][0],
+                                        detail = en
+                                            ? hazardDetalsData[hazIndex][0]
+                                            : hazardDetalsData_bn[hazIndex][0],
                                         textAlign: TextAlign.center,
                                         style: conBodyDetals,
                                       ),
@@ -220,7 +235,7 @@ class PopHazardDetails extends StatelessWidget {
                                 child: Align(
                                   alignment: Alignment.bottomLeft,
                                   child: Text(
-                                    "Examples:",
+                                    temp[3] = en ? name_en[3] : name_bn[3],
                                     //textAlign: TextAlign.start,
                                     style: conTitleDetals,
                                   ),
@@ -251,7 +266,9 @@ class PopHazardDetails extends StatelessWidget {
                                     child: Align(
                                       alignment: Alignment.center,
                                       child: Text(
-                                        hazardDetalsData[hazIndex][1],
+                                        exmp = en
+                                            ? hazardDetalsData[hazIndex][1]
+                                            : hazardDetalsData_bn[hazIndex][1],
                                         textAlign: TextAlign.center,
                                         style: conBodyDetals,
                                       ),

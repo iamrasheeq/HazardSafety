@@ -11,6 +11,7 @@ class hazardList extends StatefulWidget {
 }
 
 class _hazardListState extends State<hazardList> {
+  String name = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,12 +85,13 @@ class _hazardListState extends State<hazardList> {
                     Expanded(
                       flex: 2,
                       child: Text(
-                        hazardName_en[index],
+                        name = en ? hazardName_en[index] : hazardName_bn[index],
+                        //hazardName_bn[index],
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontFamily: 'Source Sans Pro',
                             letterSpacing: .5,
-                            fontSize: 16,
+                            fontSize: 15,
                             color: Color(0x990D1D24),
                             //color: Color(0x9C0D1D24),
                             fontWeight: FontWeight.w500),
@@ -114,48 +116,6 @@ class _hazardListState extends State<hazardList> {
                 ),
               ),
             ),
-            // child: GestureDetector(
-            //   //notun widget banabo eta
-            //   onTap: () {
-            //     print(index);
-            //   },
-            //   child: Column(
-            //     mainAxisAlignment: MainAxisAlignment.center,
-            //     crossAxisAlignment: CrossAxisAlignment.center,
-            //     children: [
-            //       Container(
-            //         decoration: BoxDecoration(
-            //           border: Border.all(color: Color(0x22000000)),
-            //           color: Color(0xFFFFFFFF),
-            //           borderRadius: BorderRadius.circular(20.0),
-            //           boxShadow: [
-            //             BoxShadow(
-            //               color: Color(0x22000000),
-            //               blurRadius: 4,
-            //               offset: Offset(4, 6),
-            //             ),
-            //           ],
-            //         ),
-            //         child: ClipRRect(
-            //           borderRadius: BorderRadius.circular(20.0),
-            //           child: Padding(
-            //             padding: const EdgeInsets.all(4.0),
-            //             child: Container(
-            //               height: 140,
-            //               width: 140,
-            //               color: Color(0xFFFFFFFF),
-            //               child: Image.asset(hazardListPhoto[index]),
-            //             ),
-            //           ),
-            //         ),
-            //       ),
-            //       SizedBox(
-            //         height: 10,
-            //       ),
-            //       Text(hazardName_en[index]),
-            //     ],
-            //   ),
-            // ),
           );
         }),
       ),

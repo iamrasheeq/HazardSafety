@@ -350,7 +350,7 @@ class PopUpHazard extends StatelessWidget {
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: EdgeInsets.all(10),
+                          padding: EdgeInsets.all(5),
                           child: Align(
                             alignment: Alignment.center,
                             child: Text(
